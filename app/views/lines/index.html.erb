@@ -1,0 +1,14 @@
+<h1>Bus Time Table</h1>
+
+<% if @lines.all.any? %>
+  <h3>Select A Line:</h3>
+    <ul>
+      <% @lines.all.each do |line| %>
+        <li><%= line.name %></li>
+      <% end %>
+    </ul>
+<% else %>
+  <h3>There are no lines in the system yet.</h3>
+<% end %>
+
+<%= link_to 'Add a new line', new_line_path %>
