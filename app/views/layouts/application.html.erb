@@ -7,6 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <h1>Bus Time Table</h1>
+
+  <% if current_admin %>
+    Logged in as: <%= current_admin.username %> |
+    <%= link_to 'Log out Admin', log_out_path %>
+  <% else %>
+    <%= link_to 'Log in Admin', log_in_path %>
+  <% end %>
+
+<hr>
 
 <%= flash[:alert] %>
 <%= flash[:notice] %>

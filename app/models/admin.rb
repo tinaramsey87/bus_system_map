@@ -16,4 +16,11 @@ class Admin < ActiveRecord::Base
       nil
     end
   end
+
+  def test_log_in
+    visit log_in_path
+    fill_in 'Username', :with => "Frank"
+    fill_in 'Password', :with => "cupoftea"
+    click_on 'Log In'
+  end
 end
