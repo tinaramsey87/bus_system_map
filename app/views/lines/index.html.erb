@@ -1,10 +1,17 @@
 <h1>Bus Time Table</h1>
 
+<% if current_admin %>
+  <p>Logged in as: <%= current_admin.username %></p>
+  <%= link_to 'Log out Admin', log_out_path %>
+<% else %>
+  <%= link_to 'Log in Admin', log_in_path %>
+<% end %>
+
 <% if @lines.all.any? %>
   <h3>Select A Line:</h3>
     <ul>
       <% @lines.all.each do |line| %>
-        <li><%= line.name %></li>
+        <li><%= link_to line.name, line_path(line) %></li>
       <% end %>
     </ul>
 <% else %>
