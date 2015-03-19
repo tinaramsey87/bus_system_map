@@ -1,1 +1,13 @@
+<% if @stations.all.any? %>
+  <ul>
+    <% @stations.each do |station| %>
+      <li><%= station.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if current_admin %>
+
 <%= link_to 'Add a new station', new_line_station_path(@line) %>
+
+<% end %>

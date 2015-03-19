@@ -5,6 +5,7 @@ class LinesController < ApplicationController
 
   def show
     @line = Line.find(params[:id])
+    @stations = @line.stations.all
   end
 
   def new

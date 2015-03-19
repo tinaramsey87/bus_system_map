@@ -2,10 +2,23 @@
 <h3><%= @line.number %></h3>
 
 
+<% if @stations.all.any? %>
+<ul>
+  <% @stations.each do |station| %>
+  <li><%= station.name %></li>
+  <% end %>
+</ul>
+<% end %>
+
+
 <% if current_admin %>
 
 <%= link_to "Edit this line", edit_line_path %> |
 <%= link_to "Delete this line", line_path(@line),
-:data => {:confirm => "Are you sure?", :method => "delete" } %>
+:data => {:confirm => "Are you sure?", :method => "delete" } %> |
+
+<%= link_to 'Add a new station', new_line_station_path(@line) %> |
+
+<%= link_to 'Return to Main Page', root_path %>
 
 <% end %>
