@@ -4,11 +4,16 @@
   <%= form_for @lines_stations do |f| %>
   <%= f.label :time %>
   <%= f.time_field :time %>
-
+</div>
+<div class="form-group">
+  <%= f.label 'Which Station?' %>
   <%= f.collection_select :station_id, Station.all, :id, :name %>
-
+</div>
+<div class="form-group">
+    <%= f.label 'Which Bus Line?' %>
   <%= f.collection_select :line_id, Line.all, :id, :name %>
-
-  <%= f.submit :class => "btn btn-success" %>
+</div>
+<div class="form-group">
+    <%= f.submit :class => "btn btn-success" %>
   <% end %>
 </div>

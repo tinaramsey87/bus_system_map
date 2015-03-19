@@ -35,3 +35,9 @@ body {
 ul {
   list-style: $list-style;
 }
+
+.form-group {
+  max-width: 700px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}

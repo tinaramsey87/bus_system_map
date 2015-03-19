@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150319180350) do
+ActiveRecord::Schema.define(version: 20150319221534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,16 +31,16 @@ ActiveRecord::Schema.define(version: 20150319180350) do
     t.datetime "updated_at"
   end
 
-  create_table "lines_stations", force: :cascade do |t|
-    t.integer  "line_id"
-    t.integer  "station_id"
-    t.time     "time"
+  create_table "stations", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "stations", force: :cascade do |t|
-    t.string   "name"
+  create_table "stops", force: :cascade do |t|
+    t.integer  "line_id"
+    t.integer  "station_id"
+    t.time     "time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
