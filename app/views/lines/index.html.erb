@@ -2,7 +2,7 @@
   <h3>Select A Bus Line:</h3>
     <ul>
       <% @lines.all.each do |line| %>
-        <li><%= line.number %> - <%= link_to line.name, line_stations_path(line) %></li>
+        <li><%= fa_icon "bus" %> <%= line.number %> - <%= link_to line.name, line_stations_path(line) %></li>
       <% end %>
     </ul>
 <% else %>

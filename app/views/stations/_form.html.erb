@@ -1,8 +1,10 @@
 <%= render "layouts/errors", :object => @station %>
 
-<%= form_for [@line, @station] do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
+<div class="form-group">
+  <%= form_for [@line, @station] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-<%= f.submit %>
-<% end %>
+  <%= f.submit :class => "btn btn-success" %>
+  <% end %>
+</div>

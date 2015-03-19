@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script>
+var Util = {
+  is_webkit: function() {
+    return navigator.userAgent.indexOf("AppleWebKit") > -1;
+  },
+  message: function() {
+    if ( typeof console == "object" ) {
+      if ( Util.is_webkit() ) {
+        console.log( "  _____
+                        |   /
+                        |__/  |   |  ____
+                        |  \  |   |  \__
+                        |___\ |___|  ___\ " );
+      }
+    }
+  }
+}
+
+// call on page load
+Util.message();
+</script>
   <title>Bus System Map</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Tinos:400,700,400italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<div class="container-fluid">
   <h1>Bus System Map</h1>
 
   <% if current_admin %>
@@ -16,12 +39,28 @@
     <%= link_to 'Log in Admin', log_in_path %>
   <% end %>
 
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+  </div>
+</nav>
+
 <hr>
+  <div class="col-md-10 col-md-offset-1">
+  <%= flash[:alert] %>
+  <%= flash[:notice] %>
 
-<%= flash[:alert] %>
-<%= flash[:notice] %>
-
-<%= yield %>
-
+  <%= yield %>
+  </div>
+</div>
 </body>
 </html>

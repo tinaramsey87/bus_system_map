@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :lines do
     resources :stations
   end
-  
+
+  resources :lines_stations
+
   resources :admins
 end

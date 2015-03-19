@@ -12,5 +12,26 @@
  *
  */
 
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+
+
+$font-stack:    Tinos, serif;
+$primary-color: #333;
+$site-wide-off-white: #fefefe;
+$list-style: none;
+
+body {
+  font: 300% $font-stack;
+  color: $primary-color;
+}
+
+.navbar {
+  background-color: $site-wide-off-white;
+}
+
+ul {
+  list-style: $list-style;
+}
