@@ -1,8 +1,8 @@
 <% if @lines.all.any? %>
-  <h3>Select A Line:</h3>
+  <h3>Select A Bus Line:</h3>
     <ul>
       <% @lines.all.each do |line| %>
-        <li><%= link_to line.name, line_path(line) %></li>
+        <li><%= line.number %> - <%= link_to line.name, line_stations_path(line) %></li>
       <% end %>
     </ul>
 <% else %>

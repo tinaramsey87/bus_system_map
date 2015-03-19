@@ -1,6 +1,6 @@
-<% if @stations.all.any? %>
+<% if @line.stations.any? %>
   <ul>
-    <% @stations.each do |station| %>
+    <% @line.stations.each do |station| %>
       <li><%= station.name %></li>
     <% end %>
   </ul>
